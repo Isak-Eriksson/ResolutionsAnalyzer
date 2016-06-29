@@ -22,7 +22,7 @@ Then you can either import the source files from the src/ folder and the scripts
 
 Resolutions Analyzer uses the JXL library. Add it to the Java build path by importing jxl.jar from the repository.
 
-Click Run -> Run configurations… then browse to your Resolutions Analyzer project. Click the tab Arguments and input </path/to/conflictreports/> </download.path/> as Program arguments.
+Click Run -> Run configurations… then browse to your Resolutions Analyzer project. Click the tab Arguments and input `</path/to/conflictreports/> </download.path/>` as Program arguments.
 
 Running the project will create Results.xls in the project path.
 
