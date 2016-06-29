@@ -16,6 +16,8 @@ This file is part of ResolutionsAnalyzer.
     You should have received a copy of the GNU General Public License
     along with ResolutionsAnalyzer.  If not, see <http://www.gnu.org/licenses/>.
 */
+import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,37 +44,32 @@ public class ResolutionsAnalyzer {
 		wbc.createSheet("Conflicts", "Project", "Type", "Merge Commit SHA", "Result Body", "Left SHA", "Left Body", "Left Date",
 				"Right SHA", "Right Body", "Right Date", "Chosen",
 				"Most recent", "Most \"if\"", "Most \"print\"", "Most \"log\"", "Most \"try\"", "Superset", "Intersection", "Result: Categories", "Chosen: Categories");
-		 analyzeConflictReport("android-async-http");
-		 analyzeConflictReport("android-best-practices");
-		 analyzeConflictReport("Android-Universal-Image-Loader");
-		 analyzeConflictReport("curator");
-		 analyzeConflictReport("elasticsearch");
-		 analyzeConflictReport("EventBus");
-		 analyzeConflictReport("fresco");
-		 analyzeConflictReport("guava");
-		 analyzeConflictReport("iosched");
-		 analyzeConflictReport("java-design-patterns");
-		 analyzeConflictReport("leakcanary"); 
-		 analyzeConflictReport("libgdx");
-		 analyzeConflictReport("okhttp");
-		 analyzeConflictReport("react-native");
-		 analyzeConflictReport("retrofit");
-		 analyzeConflictReport("RxJava");
-		 analyzeConflictReport("SlidingMenu");
-		 analyzeConflictReport("spring-framework");
-		 analyzeConflictReport("storm");
-		 analyzeConflictReport("zxing");
+		 
+		for(String projectName : getProjectNames(pathToReports)) {
+			analyzeConflictReport(projectName);
+		}
 		 
 		wbc.writeToWorkbook();
-		System.out.println("Total number of conflicts analyzed: " + totalConflictsAnalyzed);
+	}
+	
+	private String[] getProjectNames(String pathToReports) {
+		File root = new File(pathToReports);
+		String[] projectNames = root.list(new FilenameFilter() {
+		  @Override
+		  public boolean accept(File current, String name) {
+			  File file = new File(current, name);
+			  return file.isDirectory() && !name.equals("temp");
+		  }
+		});
+		return projectNames;
 	}
 
 	private String getConflictReport(String project) {
-		return pathToReports + project + "/ResultData/" + project + "/ConflictsReport.csv";
+		return pathToReports + project + "/ConflictsReport.csv";
 	}
 
 	private String getPathToRepositories(String project) {
-		return pathToRepos + project;
+		return pathToRepos + project + "/git";
 	}
 
 	private void analyzeConflictReport(String project) {

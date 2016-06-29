@@ -19,8 +19,8 @@ This file is part of ResolutionsAnalyzer.
 public class Main {
 
 	public static void main(String[] args) {
-		String reposPath = args[0];
-		String reportsPath = args[1];
+		String reportsPath = args[0];
+		String reposPath = args[1];
 		new ResolutionsAnalyzer(reposPath, reportsPath);
 	}
 
