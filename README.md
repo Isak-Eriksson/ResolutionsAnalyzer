@@ -9,7 +9,7 @@ Resolutions Analyzer analyzes the output of Conflicts Analyzer. Thus, it is requ
 
 Resolutions Analyzer takes as argument the path to the conflict reports root folder of the projects analyzed, produced by Conflicts Analyzer. The conflicts report root folder is called *ResultData*. Resolutions Analyzer also takes as argument the path to the repository download folder (the same as in the configuration for Conflicts Analyzer, *downloads.path*). Download and extract ResolutionsAnalyzer.zip from the repository, then run:
 
-`java -jar ResolutionsAnalyzer.jar </path/to/conflictreports/> </download.path/>`
+`java -jar ResolutionsAnalyzer.jar </path/to/ResultData/> </download.path/>`
 
 It is important that ResolutionsAnalyzer.jar is executed in the same folder as scripts/ (packaged next to ResolutionsAnalyzer.jar in the .zip file).
 
@@ -22,7 +22,7 @@ Then you can either import the source files from the src/ folder and the scripts
 
 Resolutions Analyzer uses the JXL library. Add it to the Java build path by importing jxl.jar from the repository.
 
-Click Run -> Run configurations… then browse to your Resolutions Analyzer project. Click the tab Arguments and input `</path/to/conflictreports/> </download.path/>` as Program arguments.
+Click Run -> Run configurations… then browse to your Resolutions Analyzer project. Click the tab Arguments and input `</path/to/ResultData/> </download.path/>` as Program arguments.
 
 Running the project will create Results.xls in the project path.
 
