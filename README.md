@@ -7,7 +7,7 @@ Resolutions Analyzer analyzes the output of Conflicts Analyzer. Thus, it is requ
 
 ###Running the .jar
 
-Resolutions Analyzer takes as argument the path to the conflict reports root folder of the projects analyzed, produced by Conflicts Analyzer. It also takes as argument the path to the repository download folder (the same as in the configuration for Conflicts Analyzer, *downloads.path*). Download and extract ResolutionsAnalyzer.zip from the repository, then run:
+Resolutions Analyzer takes as argument the path to the conflict reports root folder of the projects analyzed, produced by Conflicts Analyzer. The conflicts report root folder is called *ResultData*. Resolutions Analyzer also takes as argument the path to the repository download folder (the same as in the configuration for Conflicts Analyzer, *downloads.path*). Download and extract ResolutionsAnalyzer.zip from the repository, then run:
 
 `java -jar ResolutionsAnalyzer.jar </path/to/conflictreports/> </download.path/>`
 
