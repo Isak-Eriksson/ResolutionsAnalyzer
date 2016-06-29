@@ -1,6 +1,6 @@
 # ResolutionsAnalyzer
 
-Resolutions Analyzer is a tool for analyzing merge-conflicts resolutions.
+Resolutions Analyzer is a tool for analyzing merge-conflicts resolutions. The tool was used in a study where the 20 top starred GitHub projects were analyzed. The result data is available in Results.xlsx.
 
 ##Install and run:
 Resolutions Analyzer analyzes the output of Conflicts Analyzer. Thus, it is required that Conflicts Analyzer is run on projects of the user's choice first (see https://github.com/patwal/conflictsAnalyzer for instructions).
